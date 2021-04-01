@@ -1,0 +1,409 @@
+header {
+  position: absolute;
+  width: 100%;
+  height: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: background 0.3s;
+  .header-inner {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+  }
+  z-index: 99;
+  &.on {
+    background: #ffffff;
+    .logo a {
+      background: url("../img/common/logo.png") no-repeat;
+    }
+    .gnb-list > li > a {
+      color: $color-black;
+    }
+    .gnb-list > li:hover {
+      > a {
+        color: $color-primary;
+        &:after {
+          display: block;
+        }
+      }
+      .gnb-sub {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    .btn-nav span {
+      background: $color-black;
+      &:before,
+      &:after {
+        background: $color-black;
+      }
+    }
+  }
+}
+.logo {
+  width: 245px;
+  height: 35px;
+  text-indent: -9999em;
+  z-index: 2;
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../img/common/logo.png") no-repeat;
+    background-size: cover;
+  }
+}
+.gnb-list {
+  display: flex;
+  z-index: 2;
+  > li {
+    padding-right: 4rem;
+    line-height: 10rem;
+    &:last-child {
+      padding-right: 0;
+    }
+    > a {
+      position: relative;
+      font-weight: 500;
+      z-index: 5;
+      transition: 0.4s;
+      &:after {
+        content: "";
+        display: none;
+        position: absolute;
+        bottom: -3.8rem;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: $color-primary;
+        z-index: 5;
+        animation: rod 0.4s ease;
+      }
+    }
+  }
+}
+.gnb-sub {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+  z-index: 1;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    box-shadow: 0 5px 5px rgba(120, 120, 120, 0.05);
+    > li {
+      margin: 0 1.5rem;
+      height: 6rem;
+      line-height: 6rem;
+      > a {
+        position: relative;
+        color: $color-subBlack;
+        font-size: $SmallFontSize;
+        &:after {
+          content: "";
+          display: none;
+          position: absolute;
+          bottom: -7px;
+          width: 100%;
+          height: 1px;
+          background: $color-subBlack;
+          animation: rod 0.3s ease;
+        }
+        &:hover {
+          color: $color-black;
+          &:after {
+            display: block;
+          }
+        }
+      }
+    }
+    &.sub1 li:first-child {
+      margin-left: 3rem;
+    }
+    &.sub2 li:first-child {
+      margin-left: -9rem;
+    }
+    &.sub3 li:first-child {
+      margin-left: 22rem;
+    }
+    &.sub4 li:first-child {
+      margin-left: 30rem;
+    }
+    &.sub5 li:first-child {
+      margin-left: 50rem;
+    }
+    &.sub6 li:first-child {
+      margin-left: 52rem;
+    }
+  }
+}
+.btn-nav {
+  position: relative;
+  width: 21px;
+  height: 18px;
+  z-index: 2;
+  span {
+    position: absolute;
+    width: 21px;
+    height: 2px;
+    top: 0;
+    right: 0;
+    background: $color-black;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 2px;
+      top: 9px;
+      right: 0;
+      background: $color-black;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 21px;
+      height: 2px;
+      top: 18px;
+      right: 0;
+      background: $color-black;
+    }
+  }
+}
+@include keyframes(rod) {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.web-nav {
+  position: fixed;
+  top: -200%;
+  right: 0;
+  width: 100%;
+  background: #ffffff;
+  z-index: 999;
+  transition: 0.5s;
+  &.visible {
+    top: 0;
+  }
+  a {
+    font-size: $SmallFontSize;
+    line-height: 2.5rem;
+  }
+  .btn-nav-close {
+    position: absolute;
+    top: 3rem;
+    right: 4rem;
+    width: 48px;
+    height: 48px;
+    border: 1px solid $color-border;
+    span {
+      position: absolute;
+      left: calc(50% - 11px);
+      width: 22px;
+      height: 2px;
+      background: $color-black;
+      transform: rotate(45deg);
+      &:after {
+        content: "";
+        position: absolute;
+        left: calc(50% - 11px);
+        width: 22px;
+        height: 2px;
+        background: $color-black;
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .nav-wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > h1 {
+      display: none;
+    }
+  }
+  .nav-list {
+    width: 80%;
+    > li {
+      position: relative;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid $color-border;
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 2rem;
+        height: 0.2rem;
+        background: $color-primary;
+      }
+      > a {
+        float: left;
+        font-size: ($LargeFontSize - 0.2rem);
+        font-weight: 600;
+        width: 20%;
+      }
+    }
+  }
+  .nav-menu {
+    display: flex;
+    width: 80%;
+    > li {
+      width: 20%;
+    }
+    > li ul {
+      padding-top: 1.5rem;
+    }
+    > li ul > li > a {
+      color: $color-lightgray;
+    }
+  }
+}
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -200%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  transition: 0.5s;
+  &.visible {
+    right: 0;
+  }
+  .btn-nav-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 85%;
+    width: 4rem;
+    height: 4rem;
+    span {
+      position: absolute;
+      left: calc(50% - 11px);
+      width: 22px;
+      height: 2px;
+      background: #ffffff;
+      transform: rotate(45deg);
+      &:after {
+        content: "";
+        position: absolute;
+        left: calc(50% - 11px);
+        width: 22px;
+        height: 2px;
+        background: #ffffff;
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .nav-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 85%;
+    height: 100%;
+    background: #ffffff;
+    > h1 {
+      width: 100%;
+      height: 7rem;
+      background: $color-primary;
+      text-indent: -9999em;
+      a {
+        display: block;
+        width: 200px;
+        height: 100%;
+        margin-left: 2rem;
+        background: url("../img/common/logo_w.png") no-repeat;
+        background-position: left center;
+        background-size: 100% auto;
+      }
+    }
+  }
+  li {
+    font-size: $SmallFontSize;
+    background: $color-sectionBg1;
+  }
+  a {
+    display: block;
+    font-weight: 500;
+    padding: 1.5rem 2rem;
+    transition: 0.3s;
+  }
+  .nav-li > a.active {
+    color: $color-primary;
+    border-bottom: 0;
+    background: $color-sectionBg1;
+    &::after {
+      background: url("../img/common/mo_b_minus.png") no-repeat;
+    }
+  }
+  .nav-li > a {
+    position: relative;
+    border-bottom: 1px solid $color-border;
+    background: #ffffff;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%);
+      width: 2.4rem;
+      height: 2.4rem;
+      background: url("../img/common/mo_b_plus.png") no-repeat;
+      background-position: center;
+    }
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  .nav-menu {
+    display: none;
+  }
+  .nav-menu > li > a {
+    padding: 1.5rem 4rem;
+  }
+  .nav-menu > li > a.active::after {
+    background: url("../img/common/mo_s_minus.png") no-repeat #ffffff;
+    background-position: center;
+  }
+  .nav-submenu > a {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%);
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 1px solid $color-border;
+      background: url("../img/common/mo_s_plus.png") no-repeat #ffffff;
+      background-position: center;
+    }
+  }
+  .nav-submenu > ul {
+    display: none;
+    padding: 0 0 20px 0;
+    > li > a {
+      color: $color-subBlack;
+      font-weight: 400;
+      padding: 0.5rem 6rem;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+footer {
+  width: 100%;
+  color: $color-lightgray;
+  font-size: $TinyFontSize ;
+  background: $color-black;
+  .inner {
+    width: 100%;
+    max-width: 128rem;
+    padding: 0 2rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+.footer-top {
+  width: 100%;
+  border-bottom: 1px solid $color-gray;
+}
+.footer-bttm {
+  padding: 3rem 0 5rem 0;
+}
+.service-content {
+  display: flex;
+  flex-wrap: wrap;
+  li:nth-child(2) a { color: #ffffff; }
+  a {
+    display: block;
+    padding: 2.5rem 3rem 2.5rem 0;
+  }
+}
+.famliy-site {
+  position: relative;
+  width: 20rem;
+  button {
+    position: relative;
+    color: #ffffff;
+    font-weight: 600;
+    width: 20rem;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 2.5rem 0 2.5rem 3rem;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%; right: 3rem;
+      width: 6px; height: 6px;
+      border-top: 2px solid #ffffff;
+      border-right: 2px solid #ffffff;
+      transform: rotate(-45deg);
+    }
+    &.active {&:after{ transform: rotate(135deg); top: 45%; }}
+  }
+  ul {
+    display: none;
+    position: absolute;
+    bottom: 100%; right: 0; width: 20rem;
+    color: #ffffff;
+    padding: 1rem 0;
+    background: $color-black;
+    li a {
+      line-height: 1.5;
+      padding: 0 1.5rem;
+    }
+    li:hover {
+      background: #000000;
+      a { color: $color-lightgray; }
+    }
+    &.active { display: block; }
+  }
+}
+.company-info {
+  display: flex;
+  justify-content: space-between;
+  ul {
+    display: flex;
+    li { padding-right: 2rem; }
+  }
+}
+.company-tel {
+  p {
+    display: inline-block;;
+    color: #ffffff;
+    font-size: $LargeFontSize;
+    font-weight: 400;
+    padding-left: 1rem;
+  }
+}
+.copyright { width: 100%; padding-top: 1rem; }

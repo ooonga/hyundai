@@ -1,0 +1,38 @@
+/* 폰 트 종 류 */
+$family:'Noto Sans KR', sans-serif;
+
+/* 폰 트 크 기 */
+$TinyFontSize : 1.4rem;
+$SmallFontSize : 1.6rem;
+$BasicFontSize : 1.8rem;
+$NormalFontSize : 2rem;
+$LargeFontSize : 2.4rem;
+// ($LargeFontSize - 0.2rem) = 2.2rem;
+// ($LargeFontSize + 0.2rem) = 2.6rem;
+$titleFontSize-Main : 4.8rem;
+// ($titleFontSize-Main + 1rem) = 5.8rem;
+$titleFontSize-Sub : 4rem;
+// ($titleFontSize-Sub - 0.4rem) = 3.6rem;
+// ($titleFontSize-Sub - 0.8rem) = 3.2rem;
+// ($titleFontSize-Sub - 1.2rem) = 2.8rem;
+
+/* 사 용 색 상 */
+$color-black: #222222;
+$color-subBlack: #333333;
+
+$color-gray: #666666;
+$color-lightgray: #999999;
+
+$color-primary: #4772d5;
+$color-point: #90a4d2;
+
+$color-border: #dddddd;
+$color-sectionBg1: #f3f3f3;
+$color-sectionBg2: #efe9db;
+
+/* 미 디 어 쿼 리 분 기 점 */
+$desktop: 1320px; // 1024 ~ 1320
+$laptop: 1023px;  // 901 ~ 1023
+$tablet: 900px; // 481 ~ 900
+$fontfix: 770px; $imgfix: 600px;
+$mobile: 479px; // min-width(360) ~ 479

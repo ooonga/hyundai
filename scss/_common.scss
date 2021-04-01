@@ -1,0 +1,87 @@
+#wrapper {
+  width: 100%;
+  min-width: 360px;
+  height: 100%;
+  margin: 0 auto;
+}
+main {
+  width: 100%;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+section {
+  position: relative;
+}
+.container {
+  width: 100%;
+  max-width: 128rem;
+  padding: 10rem 3rem 16rem;
+  margin: 0 auto;
+  .item-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+  }
+  .items {
+    position: relative;
+    .i-top,
+    .i-bttm {
+      padding: 4rem;
+      text-shadow: 1px 1px 3.5px $color-gray;
+    }
+    .i-bttm {
+      position: absolute;
+    }
+  }
+  .carousel {
+    overflow: hidden;
+    width: 100%;
+    padding: 0 0 4rem;
+  }
+}
+.indicate {
+  display: none;
+  position: absolute;
+  width: 100%;
+  padding-top: 2rem;
+  > ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    li {
+      width: 1.7rem;
+      height: 1.7rem;
+      border: 1px solid $color-lightgray;
+      margin: 0 0.5rem;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+table {
+  font-size: $SmallFontSize;
+  text-align: center;
+  caption {
+    width: 100%;
+    color: $color-lightgray;
+    font-size: $TinyFontSize;
+  }
+  tr {
+    border-bottom: 1px solid $color-border;
+  }
+}
+.activeTabs {
+  background: $color-black;
+  border: 1px solid $color-black;
+}
+.animateTabs {
+  transition: left 0.5s;
+}
+.animateSlider {
+  transition: left 1s;
+}
